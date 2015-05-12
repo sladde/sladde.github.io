@@ -103,13 +103,24 @@ function renderGraphic() {
                 .attr("cy", function (d) { return y(d.likes); } )
                 .style("fill", function(d, i) {return color(i)})
 
+
             var dotScale = d3.scale.linear()
                 .domain(d3.extent(rankings, function(d) { return d.power_ranking; }))
                 .range([5,25]);
 
             dots.attr("r", function(d) {
                 return dotScale(lookup[d.user_id]);
-            });
+            })
+
+            dots.append("text")
+                .attr("dx", "0.1em")
+                .attr("dy", ".15em")
+                .text(function(d, i) { 
+                        if (i>20){
+                            return (lookup[d.user_id]).toFixed(3);
+                        } else{
+                            return "";
+                        }});
 
             // draw the power rankings
 
