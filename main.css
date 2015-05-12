@@ -1,0 +1,51 @@
+.chart {
+
+}
+
+body {
+    font-family: "Trebuchet MS";
+}
+
+.main text {
+    font: 10px sans-serif;
+}
+
+.axis line, .axis path {
+    shape-rendering: crispEdges;
+    stroke: black;
+    fill: none;
+}
+
+h2 {
+    color: blue;
+}
+
+#power-rankings {
+    margin-left: auto;
+    margin-right:auto;
+    width: 900px;
+    background-color: #EEE;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px #888888;
+    position: relative;
+}
+
+.tooltip {
+    position: absolute;
+}
+
+#container {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#title {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#title-container {
+    margin-top: 10px;
+}
