@@ -102,6 +102,12 @@ function renderGraphic() {
                 .attr("cx", function (d,i) { return x(d.total); } )
                 .attr("cy", function (d) { return y(d.likes); } )
                 .style("fill", function(d, i) {return color(i)})
+                .text(function(d, i) { 
+                        if (i>20){
+                            return (lookup[d.user_id]).toFixed(3);
+                        } else{
+                            return "";
+                        }});
 
 
             var dotScale = d3.scale.linear()
@@ -115,12 +121,7 @@ function renderGraphic() {
             dots.append("text")
                 .attr("dx", "0.1em")
                 .attr("dy", ".15em")
-                .text(function(d, i) { 
-                        if (i>20){
-                            return (lookup[d.user_id]).toFixed(3);
-                        } else{
-                            return "";
-                        }});
+                
 
             // draw the power rankings
 
